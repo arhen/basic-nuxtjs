@@ -1,7 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+	
   devtools: { enabled: true },
   app: {
+	baseURL: '/oddinary/',
     head: {
       viewport:
         "width=device-width, height=device-height, initial-scale=1, user-scalable=no",
@@ -10,6 +12,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  
   css:[
     '~/assets/styles/style.scss',
     "~/assets/styles/plasticbeach.css",
