@@ -3,7 +3,7 @@ export default defineNuxtConfig({
 	
   devtools: { enabled: true },
   app: {
-	baseURL: '/oddinary/',
+	// baseURL: '/oddinary/',
     head: {
       viewport:
         "width=device-width, height=device-height, initial-scale=1, user-scalable=no",
