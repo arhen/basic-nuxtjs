@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
 	baseURL: '/oddinary/',
-	// buildAssetsDir: '/_nuxt/',
     head: {
       viewport:
         "width=device-width, height=device-height, initial-scale=1, user-scalable=no",
