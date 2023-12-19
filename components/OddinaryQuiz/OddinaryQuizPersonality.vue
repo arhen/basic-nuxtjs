@@ -194,7 +194,6 @@ const firstRender = ref(true);
 
                 <div class="col-span-12 laptop:hidden -mx-4 px-4 overflow-hidden">
                     <Swiper
-                        :ref="thumbsSwiper"
                         class="!overflow-visible pointer-events-none"
                         :slides-per-view="2.5"
                         :space-between="0"
