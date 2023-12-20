@@ -1,26 +1,41 @@
 <script setup>
 
-const player = ref(null)
 const onPlay = ref(false)
 
 onMounted(() => {
-  onYouTubeIframeAPIReady()
+  initiateYoutube()
 })
 
-function onYouTubeIframeAPIReady() {
-    player.value = new YT.Player('ytplayer', {
-      events: {
-        'onReady': onPlayerReady
-      }
-    });
-}
-
-function onPlayerReady(event) {
+function initiateYoutube() {
   const playButton = document.getElementById("triggerPlay");
   playButton.addEventListener("click", function () {
-    event.target.playVideo();
-    onPlay.value = true
+    let tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    let firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    setTimeout(() => {
+      let player;
+
+      player = new window.YT.Player('ytPlayer', {
+        height: '693',
+        width: '1232',
+        videoId: '5g-d5htMGdI',
+        playerVars: {
+          'playsinline': 1
+        },
+        events: {
+          'onReady': onPlayerReady,
+        }
+      });
+    }, 500);
   });
+}
+
+function onPlayerReady(event){
+  event.target.playVideo();
+  onPlay.value = true
 }
 </script>
 
@@ -36,8 +51,8 @@ function onPlayerReady(event) {
           <img src="/images/logo-icownicpatch.svg" alt="ICOWNICPATCH" width="368" height="264" loading="lazy" class="w-[188px] h-auto laptop:w-[368px] relative z-10">
         </div>
         <div class="home-join-content-video w-full aspect-video rounded-3xl overflow-hidden relative">
-          <iframe id="ytplayer" class="w-full h-full pointer-events-auto" type="text/html" width="1232" height="693" src="https://www.youtube.com/embed/et87vfpV4fk?enablejsapi=1&html5=1&rel=0" title="Ultra Milk X Stray Kids" frameborder="0" allow="autoplay;" allowfullscreen></iframe>
-          <img src="/images/um-x-skz-video-poster.webp" alt="Join Community" width="1232" height="693" loading="lazy" class="w-full h-full object-cover object-center absolute top-0 left-0" :class="{ 'opacity-0 invisible' : onPlay }">
+          <div id="ytPlayer" class="w-full h-full relative"></div>
+          <NuxtImg src="/images/um-x-skz-video-poster.webp" alt="Join Community" sizes="50vw sm:100vw xl:100vw" loading="lazy" class="w-full h-full object-cover object-center absolute top-0 left-0" :class="{ 'opacity-0 invisible' : onPlay }" />
           <div id="triggerPlay" class="cursor-pointer absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex flex-row justify-center items-center w-[40px] h-[40px] laptop:w-[152px] laptop:h-[152px] rounded-full bg-[#E4CCFF]"
             :class="{ 'opacity-0 invisible' : onPlay }"
           >

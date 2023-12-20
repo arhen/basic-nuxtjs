@@ -1,4 +1,7 @@
 <script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/swiper-bundle.css';
+
 const tabs = [
     {
         id: 0,
@@ -196,16 +199,13 @@ const firstRender = ref(true);
                     <Swiper
                         class="!overflow-visible pointer-events-none"
                         :slides-per-view="2.5"
-                        :space-between="0"
                         :speed="800"
-                        :modules="[SwiperThumbs]"
-                        watch-slides-progress
-                        loop
+                        :initial-slide="8"
                         @swiper="(swiper) => thumbsSwiper = swiper"
-                        @slide-change="(swiper) => activeTab = tabs[swiper?.realIndex]"
+                        centered-slides
                     >
-                        <SwiperSlide v-for="(item, key) in tabs" v-bind:key="key">
-                            <div role="button" :class="`font-plastic text-xl laptop:text-[32px] laptop:leading-[32px] flex laptop:w-full items-center justify-center laptop:justify-start px-8 gap-2 py-1 laptop:px-5 laptop:py-2 rounded-[32px] laptop:my-2 ${item?.hoverBgColor} ${activeTab?.id === item?.id && item?.bgColor}`">
+                        <SwiperSlide v-for="(item, key) in [...tabs, ...tabs, tabs[0]]" v-bind:key="key">
+                            <div role="button" :class="`font-plastic text-xl w-[150px] tablet:mx-auto laptop:text-[32px] laptop:leading-[32px] flex laptop:w-full items-center justify-center laptop:justify-start px-8 gap-2 py-1 laptop:px-5 laptop:py-2 rounded-[32px] laptop:my-2 ${item?.hoverBgColor} ${activeTab?.id === item?.id && item?.bgColor}`">
                                 <img :src="item?.icon" :alt="item?.name" width="40" height="40" class="aspect-square w-[24px] laptop:w-[40px] h-auto flex-none">
                                 <span class="flex-none">
                                     {{ item?.name }}
@@ -221,12 +221,19 @@ const firstRender = ref(true);
                         :slides-per-view="1"
                         :space-between="16"
                         :speed="800"
-                        :modules="[SwiperThumbs]"
-                        :thumbs="{ swiper: thumbsSwiper }"
+                        :initial-slide="0"
                         loop
                         @slide-change="(swiper) => {
-                            activeTab = tabs[swiper?.realIndex];
-                            firstRender = false;
+                            activeTab = tabs[swiper?.realIndex > 7 ? swiper?.realIndex - 8 : swiper?.realIndex];
+                            if (swiper?.realIndex != 8) firstRender = false;
+                            
+                            if (swiper?.realIndex < 8) {
+                                thumbsSwiper?.slideTo(swiper?.realIndex + 8);
+                            }
+
+                            if (swiper?.realIndex >= 8) {
+                                thumbsSwiper?.slideTo(swiper?.realIndex);
+                            }
                         }"
                     >
                         <SwiperSlide v-for="(item, key) in tabs" v-bind:key="key">
@@ -256,7 +263,7 @@ const firstRender = ref(true);
                                     </div>
                                 </div>
 
-                                <div v-if="key === 0 && firstRender" class="absolute left-0 top-0 w-full h-full text-center text-white backdrop-blur-sm bg-[#000000d9]">
+                                <div role="button" v-on:touchstart="() => firstRender = false" v-if="firstRender && key === 0" class="absolute z-10 left-0 top-0 w-full h-full text-center text-white backdrop-blur-sm bg-[#000000d9]">
                                     <img src="/images/icon-swipe-hand.svg" class="mx-auto my-10 mb-6 animate-pulse" />
                                     <span class="block font-black text-2xl">Kamu bisa swipe loh!</span>
                                     <span class="text-[#CCCCCC] text-sm">Kamu bisa swipe kiri dan kanan untuk <br/> lihat semua tipe</span>

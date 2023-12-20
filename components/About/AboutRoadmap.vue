@@ -3,8 +3,8 @@ const roadmaps = [
     {
         title: 'ULTRAoddinary Type Quiz',
         description: 'Personality setiap orang memang berbeda-beda. Kini saatnya kalian cobain sendiri untuk bisa lebih mengerti kalau kalian tipe ULTRAoddinary yang mana. Cus!',
-        image: '/images/odt-roadmap-2023.webp',
-        linkFilter: '/oddinary/personality-quiz',
+        image: '/images/odt-roadmap-2023.webp?v=1',
+        linkFilter: '/personality-quiz',
         date: '12 Desember',
         columnPosition: 'ml-0 mr-auto',
         year: '2023'

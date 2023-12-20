@@ -22,8 +22,8 @@
         <p class="text-body-14px leading-[18px] laptop:text-body-20px laptop:leading-[27px] text-white text-center">Perjalanan masih panjang, Movers. Masih banyak keseruan ULTRAoddinary lainnya yang harus kamu ikutin. Stay ULTRAoddinary!</p>
       </div>
       <div class="home-roadmap-list relative w-full overflow-auto laptop:rounded-3xl laptop:overflow-visible">
-        <img src="/images/roadmap.webp" alt="Roadmap" width="1232" height="600" loading="lazy" class="w-full h-auto hidden laptop:block">
-        <img src="/images/roadmap-mobile@2x.webp" alt="Roadmap" width="712" height="360" loading="lazy" class="w-[712px] h-auto max-w-none block laptop:hidden">
+        <NuxtImg src="/images/roadmap.webp" alt="Roadmap" width="1232" height="600" sizes="0 xl:1000px" loading="lazy" class="w-full h-auto hidden laptop:block" />
+        <NuxtImg src="/images/roadmap-mobile@2x.webp" width="716" height="360" alt="Roadmap" sizes="0 sm:500px" loading="lazy" class="w-[712px] h-auto max-w-none block laptop:hidden" />
         <img src="/images/skz-element-1.svg" alt="Element" width="176" height="176" loading="lazy" class="hidden laptop:block w-[176px] h-auto absolute top-[-118px] right-[-56px]">
       </div>
       <div class="flex laptop:hidden flex-row justify-center items-center gap-1 mt-2">

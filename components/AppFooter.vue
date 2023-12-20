@@ -1,14 +1,3 @@
-<script setup>
-useHead({
-  script: [
-    { 
-      src: 'https://www.youtube.com/iframe_api',
-      tagPosition: 'bodyClose'
-    }
-  ]
-})
-</script>
-
 <template>
   <footer class="footer pt-20 laptop:pt-[120px] pb-4">
     <div class="container mx-auto px-6 laptop:px-0">
@@ -65,10 +54,9 @@ useHead({
         </NuxtLink>
       </div>
       <div class="footer-info flex flex-col justify-center items-center">
-        <img src="/images/Logo-UM-X-SKZ@2x.webp" alt="UltraMilk X StrayKids" width="160" height="56" loading="lazy" class="w-auto h-14 mb-4">
+        <NuxtImg src="/images/Logo-UM-X-SKZ@2x.webp" alt="UltraMilk X StrayKids" sizes="120px lg:160px" width="160" height="56" loading="lazy" class="w-auto h-14 mb-4" />
         <p class="text-body-12px-black font-medium laptop:text-body-16px text-white text-center mb-4">©2023 P.T. ULTRAJAYA MILK INDUSTRY & TRADING COMPANY, TBK. All rights reserved.</p>
-        <p class="text-body-12px-black font-medium laptop:text-body-16px text-white text-center mb-20">© JYP ENTERTAINMENT Co., Ltd. All rights reserved.</p>
-        <p class="text-body-12px-black font-medium laptop:text-body-16px text-white text-center uppercase">STRAY KIDS EVERYWHERE ALL AROUND THE WORLD<br/>YOU MAKE STRAY KIDS STAY</p>
+        <p class="text-body-12px-black font-medium laptop:text-body-16px text-white text-center mb-10">© JYP ENTERTAINMENT Co., Ltd. All rights reserved.</p>
       </div>
     </div>
   </footer>
