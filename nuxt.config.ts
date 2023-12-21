@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     // NOTE: you should disable this once you've finished testing, it will break HMR
     // debug: process.env.NODE_ENV === 'development'
   },
-  routeRules: {
-    '/': { prerender: true },
-  },
+//   routeRules: {
+//     '/': { prerender: true },
+//   },
 })
