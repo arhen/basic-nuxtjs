@@ -1,6 +1,6 @@
 <template>
-  <section class="home-roadmap relative">
-    <div class="container mx-auto px-6 py-20 laptop:px-0 laptop:py-[120px]">
+  <section class="home-roadmap relative overflow-hidden">
+    <div class="container mx-auto px-6 pt-32 pb-20 laptop:px-0 laptop:py-[120px]">
       <div class="home-roadmap-title flex flex-col justify-center items-center max-w-full laptop:max-w-[610px] mx-auto mb-8 laptop:mb-20">
         <svg class="w-full h-auto laptop:w-[594px]" width="594" height="88" viewBox="0 0 594 88" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M203.458 2.63157C204.787 2.63472 205.601 2.66305 205.901 2.71658C208.116 4.8135 210.021 6.91042 211.616 9.00576C213.211 11.1011 215.248 14.1583 217.724 18.1774C220.202 22.1965 224.781 29.7861 231.459 40.9476C232.802 43.2932 233.848 45.2375 234.591 46.7787C235.335 48.3214 235.852 49.4423 236.141 50.1444C236.617 50.3837 237.599 50.8214 239.091 51.459C240.582 52.095 242.238 52.731 244.058 53.3638C243.473 53.9416 242.952 54.4532 242.492 54.8987C242.034 55.3442 241.659 55.7583 241.366 56.1392C241.075 56.5218 240.891 56.9232 240.817 57.3436C240.743 57.7639 240.781 58.1275 240.933 58.433C241.275 59.4232 242.106 61.3532 243.425 64.2199C244.745 67.0882 245.683 69.4308 246.24 71.249C246.798 73.0673 246.928 74.8037 246.635 76.4551C246.508 77.1761 246.251 77.6956 245.867 78.0152C245.483 78.3348 244.672 78.8653 243.436 79.6052C242.201 80.3467 241.374 81.0205 240.955 81.6282C239.657 80.5907 238.292 78.9944 236.864 76.8345C235.436 74.6746 234.041 72.181 232.681 69.3536C231.319 66.5247 230.254 64.1822 229.479 62.3245C228.705 60.4669 228.043 58.7462 227.497 57.1625C224.718 56.2982 221.797 55.1601 218.736 53.7479C215.674 52.3374 212.855 51.2165 210.276 50.3869C210.697 54.2423 210.958 57.1846 211.063 59.2169C211.169 61.2493 211.077 63.077 210.789 64.6985C210.32 67.3417 209.061 70.062 207.011 72.8579C206.983 72.8233 205.571 72.3227 202.773 71.3624C199.977 70.4005 198.294 69.87 197.726 69.7692L197.178 1.72636C197.221 1.48708 197.477 1.40679 197.945 1.49023C198.414 1.57366 199.105 1.80508 200.021 2.18448C200.938 2.56387 201.413 2.75751 201.446 2.76223C201.462 2.6725 202.134 2.62842 203.461 2.63157H203.458ZM210.268 40.2077L222.4 44.1748L208.044 16.2978L210.268 40.2093V40.2077Z" fill="white"/>
@@ -21,10 +21,39 @@
         <h2 class="font-plastic text-head-56px laptop:text-head-88px text-white text-center uppercase mb-8">Roadmap</h2>
         <p class="text-body-14px leading-[18px] laptop:text-body-20px laptop:leading-[27px] text-white text-center">Perjalanan masih panjang, Movers. Masih banyak keseruan ULTRAoddinary lainnya yang harus kamu ikutin. Stay ULTRAoddinary!</p>
       </div>
-      <div class="home-roadmap-list relative w-full overflow-auto laptop:rounded-3xl laptop:overflow-visible">
-        <NuxtImg src="/images/roadmap.webp" alt="Roadmap" width="1232" height="600" sizes="0 xl:1000px" loading="lazy" class="w-full h-auto hidden laptop:block" />
-        <NuxtImg src="/images/roadmap-mobile@2x.webp" width="716" height="360" alt="Roadmap" sizes="0 sm:500px" loading="lazy" class="w-[712px] h-auto max-w-none block laptop:hidden" />
-        <img src="/images/skz-element-1.svg" alt="Element" width="176" height="176" loading="lazy" class="hidden laptop:block w-[176px] h-auto absolute top-[-118px] right-[-56px]">
+      <div class="home-roadmap-list relative w-full rounded-2xl laptop:rounded-3xl overflow-x-auto laptop:overflow-hidden z-10">
+        <div class="w-[712px] h-[360px] laptop:w-full laptop:h-[600px] bg-white/10 backdrop-blur-[48px] rounded-2xl px-4 laptop:px-6 relative">
+          <h2 class="text-[16px] laptop:text-[20px] font-bold leading-[20px] laptop:leading-[24px] text-white text-center absolute top-4 laptop:top-8 left-4 laptop:left-1/2 laptop:-translate-x-1/2">Roadmap</h2>
+          <div class="w-full h-[222px] laptop:h-[380px] absolute bottom-4 laptop:bottom-[46px] left-1/2 -translate-x-1/2">
+            <img src="/images/roadmap-item-1.webp" alt="Roadmap Item 1" width="130" height="130" class="w-[130px] h-auto laptop:w-[192px] absolute top-0 left-16 laptop:top-8 laptop:left-[120px] z-10" loading="lazy">
+            <img src="/images/roadmap-item-2.webp" alt="Roadmap Item 2" width="130" height="130" class="w-[130px] h-auto laptop:w-[192px] absolute bottom-0 left-[152px] laptop:left-[280px]" loading="lazy">
+            <img src="/images/roadmap-item-3.webp" alt="Roadmap Item 3" width="130" height="130" class="w-[130px] h-auto laptop:w-[192px] absolute top-16 left-[282px] laptop:top-0 laptop:left-[430px]" loading="lazy">
+            <img src="/images/roadmap-item-4.webp" alt="Roadmap Item 4" width="130" height="130" class="w-[130px] h-auto laptop:w-[192px] absolute top-4 right-[164px] laptop:top-20 laptop:right-[360px]" loading="lazy">
+            <img src="/images/roadmap-item-5.webp" alt="Roadmap Item 5" width="130" height="130" class="w-[130px] h-auto laptop:w-[192px] absolute top-[76px] right-4 laptop:top-6 laptop:right-[78px]" loading="lazy">
+          </div>
+          <div class="grid grid-cols-5 h-full">
+            <div class="border-s-[1px] border-e-[1px] border-[#2F2F2F] pt-[60px] laptop:pt-[88px] laptop:px-2">
+              <p class="text-[12px] leading-[16px] laptop:text-[16px] font-bold laptop:leading-[21px] text-white/40">2023</p>
+              <p class="text-[16px] laptop:text-[24px] font-bold leading-[20px] laptop:leading-[32px] text-white">Desember</p>
+            </div>
+            <div class="border-e-[1px] border-[#2F2F2F] pt-[60px] laptop:pt-[88px] laptop:px-2">
+              <p class="text-[12px] leading-[16px] laptop:text-[16px] font-bold laptop:leading-[21px] text-white/40">2024</p>
+              <p class="text-[16px] laptop:text-[24px] font-bold leading-[20px] laptop:leading-[32px] text-white">Q1</p>
+            </div>
+            <div class="border-e-[1px] border-[#2F2F2F] pt-[60px] laptop:pt-[88px] laptop:px-2">
+              <p class="text-[12px] leading-[16px] laptop:text-[16px] font-bold laptop:leading-[21px] text-white/40">&nbsp;</p>
+              <p class="text-[16px] laptop:text-[24px] font-bold leading-[20px] laptop:leading-[32px] text-white">Q2</p>
+            </div>
+            <div class="border-e-[1px] border-[#2F2F2F] pt-[60px] laptop:pt-[88px] laptop:px-2">
+              <p class="text-[12px] leading-[16px] laptop:text-[16px] font-bold laptop:leading-[21px] text-white/40">&nbsp;</p>
+              <p class="text-[16px] laptop:text-[24px] font-bold leading-[20px] laptop:leading-[32px] text-white">Q3</p>
+            </div>
+            <div class="border-e-[1px] border-[#2F2F2F] pt-[60px] laptop:pt-[88px] laptop:px-2">
+              <p class="text-[12px] leading-[16px] laptop:text-[16px] font-bold laptop:leading-[21px] text-white/40">&nbsp;</p>
+              <p class="text-[16px] laptop:text-[24px] font-bold leading-[20px] laptop:leading-[32px] text-white">Q4</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="flex laptop:hidden flex-row justify-center items-center gap-1 mt-2">
         <p class="text-body-12px-black font-medium text-white text-center">Scroll Kanan</p>
@@ -32,8 +61,9 @@
           <path d="M14.375 7.23755L17.5 10.3625M17.5 10.3625L14.375 13.4875M17.5 10.3625H2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <img src="/images/skz-element-2.svg" alt="Element" width="142" height="142" loading="lazy" class="hidden laptop:block w-[142px] h-auto absolute top-4 left-[189px]">
-      <img src="/images/skz-element-3.svg" alt="Element" width="80" height="80" loading="lazy" class="block laptop:hidden w-[80px] h-auto absolute -top-2 left-[48px] rotate-[-30deg]">
+      <img src="/images/skz-element-2.svg" alt="Element" width="142" height="142" loading="lazy" class="laptop:w-[142px] h-auto absolute -top-5 left-0 laptop:top-4 laptop:left-[189px]">
+      <img src="/images/skz-element-1.svg" alt="Element" width="230" height="230" loading="lazy" class="w-[114px] laptop:w-[230px] h-auto absolute top-[36%] right-[-8%] laptop:top-[30%] laptop:right-[3%]">
+      <img src="/images/skz-element-7.svg" alt="Element" width="260" height="260" loading="lazy" class="w-32 h-auto laptop:w-[260px] absolute bottom-[4%] left-[-4%] laptop:bottom-[-2%] laptop:left-[1%]">
     </div>
   </section>
 </template>

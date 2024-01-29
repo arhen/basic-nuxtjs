@@ -1,9 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      apiURL: process.env.NUXT_APP_API_BASE_URL,
+      arURL: process.env.NUXT_APP_AUGMENTED_REALITY_BASE_URL,
+      secretKeyCrypto: process.env.NUXT_APP_SECRET_KEY_CRYPTO,
+      enablePhase2: process.env.NUXT_APP_ENABLE_PHASE_2,
+      avatarURL: process.env.NUXT_APP_AVATAR_BASE_URL,
+	  googleLoginURL: process.env.NUXT_APP_GOOGLE_LOGIN_URL,
+    },
+  },
   app: {
-	// baseURL: '/oddinary/',
-	buildAssetsDir: '/oddinary/_nuxt/',
+	baseURL: '/ultraoddinary/',
     head: {
       viewport:
         "width=device-width, height=device-height, initial-scale=1",
@@ -30,19 +39,22 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css:[
-    '~/assets/styles/style.scss',
+  css: [
+    "~/assets/styles/style.scss",
     "~/assets/styles/plasticbeach.css",
     "~/assets/styles/satoshi.css",
   ],
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-delay-hydration', '@nuxt/image'],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-delay-hydration', 'nuxt-swiper', '@nuxtjs/device', 'nuxt-vue3-google-signin'],
+  googleSignIn: {
+    clientId: process.env.NUXT_APP_GOOGLE_CLIENT_ID,
+  },
   delayHydration: {
     mode: 'init',
     // enables nuxt-delay-hydration in dev mode for testing
     // NOTE: you should disable this once you've finished testing, it will break HMR
     // debug: process.env.NODE_ENV === 'development'
   },
-//   routeRules: {
-//     '/': { prerender: true },
-//   },
+  build: {
+    transpile: ["gsap"],
+  },
 })

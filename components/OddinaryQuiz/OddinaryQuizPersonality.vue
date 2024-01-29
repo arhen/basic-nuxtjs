@@ -1,7 +1,4 @@
 <script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper-bundle.css';
-
 const tabs = [
     {
         id: 0,
@@ -30,7 +27,7 @@ const tabs = [
         bgColor: 'bg-[#FF0D41]',
         hoverBgColor: 'hover:bg-[#FF0D41]',
         shortDescription: `“<span class="text-white px-1 bg-[#FF0D41]">Intimidating</span> appearance, but actually has <span class="text-white px-1 bg-[#FF0D41]">kind heart</span> and <span class="text-white px-1 bg-[#FF0D41]">cute</span>”`,
-        question: 'Despite your intimidating presence, where your powerful performances command attention, in reality you radiate a charming and approachable aura. This captivating duality adds depth to your personality, making you relatable and intriguing to both fans and fellow artists',
+        question: 'Despite your intimidating presence, where your strong vibe captures attention, in reality you radiate a friendly and approachable aura. This captivating duality adds depth to your personality, making you relatable and intriguing, both among friends and acquaintances',
         facts: [
             `People who just met you might think you're a bit cold.`,
             `Some of them might even see you as fierce at first.`,
@@ -43,7 +40,7 @@ const tabs = [
         name: 'Distincute',
         icon: '/images/icon-skz-distincute.svg?v=1',
         title: '/images/text-distincute.svg',
-        subTitle: 'Distictive & Cute',
+        subTitle: 'Distinctive & Cute',
         textColor: 'text-[#FF0C98]',
         bgColor: 'bg-[#FF0C98]',
         hoverBgColor: 'hover:bg-[#FF0C98]',
@@ -154,7 +151,7 @@ const firstRender = ref(true);
                 YANG MANA, NIH?
             </h2>
 
-            <div class="grid grid-cols-12 gap-4 laptop:gap-10 laptop:w-[1200px] mx-auto mt-10 laptop:mt-20">
+            <div class="grid grid-cols-12 gap-4 laptop:gap-10 laptop:max-w-full laptop:w-[1200px] mx-auto mt-10 laptop:mt-20">
                 <div class="col-span-12 laptop:col-span-3 hidden laptop:block">
                     <div class="flex items-center max-w-[100vw] overflow-x-auto -mx-4 px-4 py-2">
                         <ul class="font-plastic text-xl laptop:text-[32px] laptop:leading-[32px] flex flex-row laptop:flex-col gap-1 laptop:gap-0">
@@ -205,7 +202,7 @@ const firstRender = ref(true);
                         centered-slides
                     >
                         <SwiperSlide v-for="(item, key) in [...tabs, ...tabs, tabs[0]]" v-bind:key="key">
-                            <div role="button" :class="`font-plastic text-xl w-[150px] tablet:mx-auto laptop:text-[32px] laptop:leading-[32px] flex laptop:w-full items-center justify-center laptop:justify-start px-8 gap-2 py-1 laptop:px-5 laptop:py-2 rounded-[32px] laptop:my-2 ${item?.hoverBgColor} ${activeTab?.id === item?.id && item?.bgColor}`">
+                            <div role="button" :class="`font-plastic mx-auto text-xl w-[150px] laptop:text-[32px] laptop:leading-[32px] flex laptop:w-full items-center justify-center laptop:justify-start px-8 gap-2 py-1 laptop:px-5 laptop:py-2 rounded-[32px] laptop:my-2 ${item?.hoverBgColor} ${activeTab?.id === item?.id && item?.bgColor}`">
                                 <img :src="item?.icon" :alt="item?.name" width="40" height="40" class="aspect-square w-[24px] laptop:w-[40px] h-auto flex-none">
                                 <span class="flex-none">
                                     {{ item?.name }}

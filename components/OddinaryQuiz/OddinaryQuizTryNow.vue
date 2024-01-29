@@ -38,8 +38,8 @@
                     </div>
                 </div>
 
-                <div class="aspect-[1440/957] mt-24 laptop:-mt-32 block -mx-4 laptop:mx-0">
-                    <img src="/images/um-skz-try-now.webp?v=2" alt="#ULTRA Oddinary Personality Quiz" width="1440" height="957" loading="lazy" class="w-full h-auto object-contain">
+                <div class="aspect-[1440/957] mt-24 laptop:-mt-40 block -mx-8 laptop:mx-0">
+                    <img src="/images/um-skz-try-now.webp?v=3" alt="#ULTRA Oddinary Personality Quiz" width="1440" height="957" loading="lazy" class="w-full h-auto object-contain">
                 </div>
             </div>
         </div>

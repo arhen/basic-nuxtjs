@@ -21,7 +21,7 @@
                 <img src="/images/text-iam-ultramilk.svg" alt="#iamULTRAMILK" width="886" height="104" loading="lazy" class="w-full laptop:w-[1200px] h-auto max-w-none mx-auto">
             </div>
 
-            <p class="font-[500] max-w-[600px] mx-auto text-white text-sm laptop:text-xl text-center my-14 laptop:my-20">
+            <p class="font-[500] max-w-[608px] mx-auto text-white text-sm laptop:text-xl text-center my-14 laptop:my-20">
                 Ultra Milk berkolaborasi dengan Stray Kids agar bisa mengajak para kalian para anak muda untuk bisa
                 menunjukkan sisi unik kalian, karena dengan keunikan kalian tersebut kalian bisa berani mengekspresikan
                 diri untuk menjadi yang terbaik. Bersama-sama kita terus buktiin dan tunjukkin bareng Stray Kids untuk

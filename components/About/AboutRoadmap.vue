@@ -5,23 +5,25 @@ const roadmaps = [
         description: 'Personality setiap orang memang berbeda-beda. Kini saatnya kalian cobain sendiri untuk bisa lebih mengerti kalau kalian tipe ULTRAoddinary yang mana. Cus!',
         image: '/images/odt-roadmap-2023.webp?v=1',
         linkFilter: '/personality-quiz',
-        date: '12 Desember',
+        date: '12 Desember 2023',
         columnPosition: 'ml-0 mr-auto',
-        year: '2023'
+        year: '2023',
+        ctaText: 'COBAIN FILTERNYA'
     },
     {
-        title: 'Mystery Event',
-        description: 'Keseruan ULTRAoddinary lain yang layak kalian coba. Tungguin yah!',
-        image: '/images/odt-roadmap-Q1.webp',
-        linkFilter: '',
-        date: 'Kuartal Pertama',
+        title: 'AR Photocard',
+        description: 'Jangan sampai ketinggalan buat koleksi semua photocard yang ULTRAoddinary dari Ultra Milk X Stray Kids.',
+        image: '/images/odt-roadmap-Q1.webp?v=1',
+        linkFilter: '/ar-photo-card',
+        date: '16 Januari 2024',
         columnPosition: 'ml-0 mr-auto laptop:ml-auto laptop:mr-0',
-        year: '2024'
+        year: '2024',
+        ctaText: 'CEK INFONYA'
     },
     {
         title: 'Mystery Event',
         description: 'Keseruan ULTRAoddinary lain yang layak kalian coba. Tungguin yah!',
-        image: '/images/odt-roadmap-Q2.webp',
+        image: '/images/odt-roadmap-Q2.webp?v=1',
         linkFilter: '',
         date: 'Kuartal Kedua',
         columnPosition: 'ml-0 mr-auto laptop:mx-auto',
@@ -30,7 +32,7 @@ const roadmaps = [
     {
         title: 'Mystery Event',
         description: 'Keseruan ULTRAoddinary lain yang layak kalian coba. Tungguin yah!',
-        image: '/images/odt-roadmap-Q3.webp',
+        image: '/images/odt-roadmap-Q3.webp?v=1',
         linkFilter: '',
         date: 'Kuartal Ketiga',
         columnPosition: 'ml-0 mr-auto laptop:ml-0 laptop:mr-auto',
@@ -39,7 +41,7 @@ const roadmaps = [
     {
         title: 'Mystery Event',
         description: 'Keseruan ULTRAoddinary lain yang layak kalian coba. Tungguin yah!',
-        image: '/images/odt-roadmap-Q4.webp',
+        image: '/images/odt-roadmap-Q4.webp?v=1',
         linkFilter: '',
         date: 'Kuartal Keempat',
         columnPosition: 'ml-0 mr-auto laptop:ml-auto laptop:mr-0',
@@ -75,13 +77,15 @@ const roadmaps = [
                                     </svg>
                                     <span>{{ roadmap?.date }}</span>
                                 </div>
-            
-                                <img :src="roadmap?.image" alt="Campaign Roadmap" width="400" height="400" loading="lazy" class="aspect-square w-[400] h-auto">
+        
+                                <IntersectionProvider class="aspect-square w-[400] h-auto">
+                                    <img :src="roadmap?.image" alt="Campaign Roadmap" width="400" height="400" loading="lazy" class="aspect-square w-[400] h-auto">
+                                </IntersectionProvider>
                                 <h5 class="font-bold text-xl laptop:text-[32px] laptop:leading-[43px] my-3 mt-5">{{ roadmap?.title }}</h5>
                                 <p class="text-[#CCCCCC] text-sm laptop:text-xl">{{ roadmap?.description }}</p>
             
                                 <NuxtLink :data-roadmap="roadmap?.title" v-if="roadmap?.linkFilter" :to="roadmap?.linkFilter" class="bg-[#CDFF3E] text-black text-center py-4 laptop:py-5 laptop:px-8 text-xl laptop:text-2xl font-black uppercase rounded-[100px] w-full block mt-6">
-                                    COBAIN FILTERNYA!
+                                    {{ roadmap?.ctaText }}
                                 </NuxtLink>
                             </div>
                         </div>

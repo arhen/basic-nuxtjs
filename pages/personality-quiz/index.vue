@@ -1,9 +1,9 @@
 <template>
   <div class="pt-[120px] laptop:pt-[128px]">
     <AppHeader />
-    <LazyOddinaryQuizHero />
-    <LazyOddinaryQuizPersonality />
-    <LazyOddinaryQuizTryNow />
+    <OddinaryQuizHero />
+    <OddinaryQuizPersonality />
+    <OddinaryQuizTryNow />
     <AppFooter />
   </div>
 </template>

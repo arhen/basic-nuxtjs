@@ -1,8 +1,8 @@
 <template>
   <div class="pt-[120px] laptop:pt-[128px]">
     <AppHeader />
-    <LazyAboutHero />
-    <LazyAboutRoadmap />
+    <AboutHero />
+    <AboutRoadmap />
     <!-- <AboutFAQ /> -->
     <AppFooter />
   </div>

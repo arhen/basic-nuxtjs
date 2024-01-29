@@ -10,6 +10,7 @@ export default {
   theme: {
     screens: {
       '390': '390px',
+      'fold': '600px',
       'tablet': '768px',
       'laptop': '1024px',
       'desktop': '1232px',
